@@ -17,7 +17,7 @@ When you click the **Knit** button a document will be generated that includes bo
 
 ```{r cars}
 library(readr)
-mushrooms <- read_csv("~/CUNY/DATA_607_data_aqu/Week1/mushroom_dataset.csv")
+mushrooms <- read_csv("mushroom_dataset.csv")
 ```
 ```{r}
 #renaming column 1
