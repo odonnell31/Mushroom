@@ -1,0 +1,72 @@
+---
+title: "Subset of Mushroom Dataset"
+author: "Michael ODonnell"
+date: "February 7, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+library(readr)
+mushrooms <- read_csv("~/CUNY/DATA_607_data_aqu/Week1/mushroom_dataset.csv")
+```
+```{r}
+#renaming column 1
+names(mushrooms)[1]<-"class"
+```
+
+```{r}
+#checking data types for all columns
+str(mushrooms)
+```
+
+```{r}
+#change values for the class column
+mushrooms$class[mushrooms$class == 'e'] <- 'edible'
+mushrooms$class[mushrooms$class == 'p'] <- 'poisonous'
+```
+
+```{r}
+#figuring out what the second column is...
+unique((mushrooms)[2])
+```
+```{r}
+#renaming column 2
+names(mushrooms)[2]<-"cap-shape"
+```
+
+```{r}
+#figuring out what the third column is...
+unique((mushrooms)[3])
+```
+
+```{r}
+#renaming column 3
+names(mushrooms)[3]<-"cap-surface"
+```
+
+```{r}
+#figuring out what the fourth column is...
+unique((mushrooms)[4])
+```
+
+```{r}
+#renaming column 4
+names(mushrooms)[4]<-"cap-color"
+```
+
+```{r}
+#subsetting the dataframe
+mushrooms = mushrooms[,1:4]
+head(mushrooms, 3)
+```
+
